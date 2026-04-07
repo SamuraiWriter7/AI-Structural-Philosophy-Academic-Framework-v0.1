@@ -487,3 +487,49 @@ Status: draft
 Type: academic-framework-specification
 Language: ja
 Last updated: 2026-04-07
+
+## Schema Usage
+
+This repository includes a JSON Schema and a sample JSON file for validating the **AI Structural Philosophy Academic Framework v0.1** specification.
+
+### Files
+
+- `ai-structural-philosophy-v0.1.schema.json`  
+  JSON Schema for the framework meta-specification
+- `ai-structural-philosophy-v0.1.sample.json`  
+  Example specification document validated against the schema
+
+### Local validation
+
+You can validate the sample file locally with `ajv-cli`.
+
+#### 1. Install dependencies
+
+```bash
+npm install --no-save ajv-cli ajv-formats
+2. Run validation
+npx ajv validate \
+  --spec=draft2020 \
+  --strict=false \
+  -c ajv-formats \
+  -s ai-structural-philosophy-v0.1.schema.json \
+  -d ai-structural-philosophy-v0.1.sample.json
+
+If validation succeeds, the sample conforms to the schema.
+
+GitHub Actions validation
+
+This repository also supports automated validation through GitHub Actions using:
+
+.github/workflows/validate-specs.yml
+
+The workflow validates the sample JSON against the schema on:
+
+push
+pull_request
+manual trigger via workflow_dispatch
+Notes
+The schema is based on JSON Schema Draft 2020-12
+ajv-formats is required because the schema uses format: "date"
+--strict=false is used to keep validation practical during the draft stage of the framework
+Future versions may expand validation to multiple schema/sample pairs
