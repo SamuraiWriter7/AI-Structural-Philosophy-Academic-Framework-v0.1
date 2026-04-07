@@ -1,0 +1,60 @@
+name: validate-specs
+
+on:
+  push:
+    paths:
+      - ".github/workflows/validate-specs.yml"
+      - "**/*.schema.json"
+      - "**/*.sample.json"
+      - "**/*.json"
+  pull_request:
+    paths:
+      - ".github/workflows/validate-specs.yml"
+      - "**/*.schema.json"
+      - "**/*.sample.json"
+      - "**/*.json"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          package-manager-cache: false
+
+      - name: Install JSON Schema validator
+        run: |
+          npm install --no-save ajv-cli ajv-formats
+
+      - name: Validate all schema/sample pairs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          for sample in *.sample.json; do
+            [ -e "$sample" ] || continue
+            schema="${sample%.sample.json}.schema.json"
+
+            if [ ! -f "$schema" ]; then
+              echo "Missing schema for sample: $sample"
+              exit 1
+            fi
+
+            echo "Validating $sample against $schema"
+            npx ajv validate \
+              --spec=draft2020 \
+              --strict=false \
+              -c ajv-formats \
+              -s "$schema" \
+              -d "$sample"
+          done
