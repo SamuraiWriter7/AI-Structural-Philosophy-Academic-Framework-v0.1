@@ -1,0 +1,491 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/ai-structural-philosophy-v0.1.schema.json",
+  "title": "AI Structural Philosophy Academic Framework v0.1 Schema",
+  "description": "JSON Schema for validating the AI Structural Philosophy Academic Framework v0.1 meta-specification.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "spec_name",
+    "spec_id",
+    "version",
+    "status",
+    "language",
+    "license",
+    "last_updated",
+    "type",
+    "overview",
+    "core_thesis",
+    "scope",
+    "definitions",
+    "axioms",
+    "chapters",
+    "core_concepts",
+    "methodology_framework",
+    "validation_principles",
+    "falsifiability",
+    "deliverables",
+    "interfaces",
+    "roadmap",
+    "closing"
+  ],
+  "properties": {
+    "spec_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "spec_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9\\-\\.]*$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "review", "stable", "deprecated"]
+    },
+    "language": {
+      "type": "string",
+      "minLength": 2
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "type": {
+      "type": "string",
+      "const": "academic-framework-specification"
+    },
+    "overview": {
+      "$ref": "#/$defs/overview"
+    },
+    "core_thesis": {
+      "$ref": "#/$defs/coreThesis"
+    },
+    "scope": {
+      "$ref": "#/$defs/scope"
+    },
+    "definitions": {
+      "$ref": "#/$defs/definitions"
+    },
+    "axioms": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/axiom"
+      }
+    },
+    "chapters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/chapter"
+      }
+    },
+    "core_concepts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/coreConcept"
+      }
+    },
+    "methodology_framework": {
+      "$ref": "#/$defs/methodologyFramework"
+    },
+    "validation_principles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "falsifiability": {
+      "$ref": "#/$defs/falsifiability"
+    },
+    "deliverables": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "interfaces": {
+      "$ref": "#/$defs/interfaces"
+    },
+    "roadmap": {
+      "$ref": "#/$defs/roadmap"
+    },
+    "closing": {
+      "$ref": "#/$defs/closing"
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "localizedDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ja"],
+      "properties": {
+        "ja": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "overview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title_ja",
+        "title_en",
+        "purpose",
+        "positioning",
+        "epistemic_status"
+      ],
+      "properties": {
+        "title_ja": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title_en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "positioning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "epistemic_status": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "coreThesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statement",
+        "shift_of_attention",
+        "central_chain"
+      ],
+      "properties": {
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "shift_of_attention": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["from", "to"],
+          "properties": {
+            "from": {
+              "type": "string",
+              "minLength": 1
+            },
+            "to": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "central_chain": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["included_domains", "excluded_claims"],
+      "properties": {
+        "included_domains": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "excluded_claims": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "definitions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ai_structural_philosophy",
+        "internal_structure",
+        "posture",
+        "value_direction",
+        "emotion_related_representation",
+        "persona",
+        "structural_drift",
+        "structural_safety",
+        "internal_causality",
+        "causal_trace"
+      ],
+      "properties": {
+        "ai_structural_philosophy": {
+          "$ref": "#/$defs/localizedDefinition"
+        },
+        "internal_structure": {
+          "$ref": "#/$defs/localizedDefinition"
+        },
+        "posture": {
+          "$ref": "#/$defs/localizedDefinition"
+        },
+        "value_direction": {
+          "$ref": "#/$defs/localizedDefinition"
+        },
+        "emotion_related_representation": {
+          "$ref": "#/$defs/localizedDefinition"
+        },
+        "persona": {
+          "$ref": "#/$defs/localizedDefinition"
+        },
+        "structural_drift": {
+          "$ref": "#/$defs/localizedDefinition"
+        },
+        "structural_safety": {
+          "$ref": "#/$defs/localizedDefinition"
+        },
+        "internal_causality": {
+          "$ref": "#/$defs/localizedDefinition"
+        },
+        "causal_trace": {
+          "$ref": "#/$defs/localizedDefinition"
+        }
+      }
+    },
+    "axiom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "statement"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^A\\d+$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "chapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name_ja",
+        "name_en",
+        "definition",
+        "key_concepts",
+        "research_questions",
+        "methods"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^C\\d+$"
+        },
+        "name_ja": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name_en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "definition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "key_concepts": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "research_questions": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "methods": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "coreConcept": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "ja", "description"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^K\\d+$"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "ja": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "methodologyEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ja"],
+      "properties": {
+        "ja": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "methodologyFramework": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "interpretation",
+        "intervention",
+        "comparison",
+        "longitudinal",
+        "normative",
+        "institutional"
+      ],
+      "properties": {
+        "interpretation": {
+          "$ref": "#/$defs/methodologyEntry"
+        },
+        "intervention": {
+          "$ref": "#/$defs/methodologyEntry"
+        },
+        "comparison": {
+          "$ref": "#/$defs/methodologyEntry"
+        },
+        "longitudinal": {
+          "$ref": "#/$defs/methodologyEntry"
+        },
+        "normative": {
+          "$ref": "#/$defs/methodologyEntry"
+        },
+        "institutional": {
+          "$ref": "#/$defs/methodologyEntry"
+        }
+      }
+    },
+    "falsifiability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["conditions_requiring_revision"],
+      "properties": {
+        "conditions_requiring_revision": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "interfaces": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["adjacent_fields", "non_equivalence_note"],
+      "properties": {
+        "adjacent_fields": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "non_equivalence_note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "roadmapPhase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["focus"],
+      "properties": {
+        "focus": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "roadmap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["v0_1", "v0_2", "v0_3", "v1_0"],
+      "properties": {
+        "v0_1": {
+          "$ref": "#/$defs/roadmapPhase"
+        },
+        "v0_2": {
+          "$ref": "#/$defs/roadmapPhase"
+        },
+        "v0_3": {
+          "$ref": "#/$defs/roadmapPhase"
+        },
+        "v1_0": {
+          "$ref": "#/$defs/roadmapPhase"
+        }
+      }
+    },
+    "closing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["declaration", "final_position"],
+      "properties": {
+        "declaration": {
+          "type": "string",
+          "minLength": 1
+        },
+        "final_position": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
