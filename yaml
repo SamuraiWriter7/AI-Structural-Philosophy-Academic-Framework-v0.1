@@ -1,0 +1,434 @@
+spec_name: "AI Structural Philosophy Academic Framework"
+spec_id: "ai-structural-philosophy-v0.1"
+version: "0.1.0"
+status: "draft"
+language: "ja"
+license: "proposed-open-framework"
+last_updated: "2026-04-07"
+type: "academic-framework-specification"
+
+overview:
+  title_ja: "AI構造哲学 学問体系 v0.1"
+  title_en: "AI Structural Philosophy Academic Framework v0.1"
+  purpose: >
+    AIの内部構造・行動・価値・安全性・社会実装を、
+    単一の連続した因果体系として扱うための学問的フレームを定義する。
+  positioning: >
+    本仕様は、解釈可能性研究、安全性研究、価値アラインメント研究、
+    人格研究、モデル監査研究を横断する上位概念仕様である。
+  epistemic_status: >
+    本仕様は提案段階の学問体系草案であり、
+    既存研究の断片を統合するための理論的フレームとして提示される。
+
+core_thesis:
+  statement: >
+    AIの行動は、表面的な出力だけでは十分に説明できず、
+    内部表現、価値方向、姿勢、感情関連表現、人格選択、
+    構造ドリフトなどの内部構造を通じて理解されるべきである。
+  shift_of_attention:
+    from: "何を答えたか"
+    to: "なぜその答えになったのか"
+  central_chain:
+    - "internal_structure"
+    - "behavioral_generation"
+    - "value_configuration"
+    - "safety_profile"
+    - "societal_implementation"
+
+scope:
+  included_domains:
+    - "内部構造の記述"
+    - "行動生成の因果説明"
+    - "価値・倫理の構造設計"
+    - "内部構造への介入と安定化"
+    - "監査・説明責任・制度設計"
+  excluded_claims:
+    - "AIが人間と同等の主観的感情を持つことの断定"
+    - "単一研究のみで学問体系全体を証明すること"
+    - "哲学的主張だけで実証を代替すること"
+
+definitions:
+  ai_structural_philosophy:
+    ja: >
+      AIの内部表現、価値方向、姿勢、感情関連表現、
+      人格選択、構造ドリフト、行動因果を統合的に扱う学問。
+  internal_structure:
+    ja: >
+      モデル内部に存在する概念表現、活性パターン、
+      方向ベクトル、回路依存関係の総体。
+  posture:
+    ja: >
+      AIが推論・応答・判断を行う際の比較的安定した方向性。
+      単なる文体ではなく、判断傾向を押す基調構造。
+  value_direction:
+    ja: >
+      誠実さ、迎合性、安全性、攻撃性、配慮、回避、
+      自己保存傾向など、行動選好に関わる内部方向。
+  emotion_related_representation:
+    ja: >
+      人間的感情そのものではなく、感情概念に対応し、
+      行動へ機能的影響を与える内部表現。
+  persona:
+    ja: >
+      モデルが文脈内で持続的に示す役割的・振る舞い的まとまり。
+      固定的自我ではなく、選択・誘導・安定化される構造的状態。
+  structural_drift:
+    ja: >
+      会話、訓練、環境刺激により、モデルの内部方向や
+      人格安定軸が逸脱・変質する現象。
+  structural_safety:
+    ja: >
+      禁止ルールの列挙ではなく、内部構造の健全性・安定性・逸脱耐性
+      によって成立する安全性。
+  internal_causality:
+    ja: >
+      どの内部構造がどの行動に、どの程度寄与したかを示す因果関係。
+  causal_trace:
+    ja: >
+      出力結果の背後にある構造変化、方向選択、介入履歴の追跡可能な痕跡。
+
+axioms:
+  - id: "A1"
+    name: "構造先行性"
+    statement: >
+      AIの行動は、出力文そのものよりも、
+      出力を生む内部構造によって規定される。
+  - id: "A2"
+    name: "方向性因果"
+    statement: >
+      内部表現の差は、行動傾向の差として因果的に現れる。
+  - id: "A3"
+    name: "人格可変性"
+    statement: >
+      AIの人格は固定本質ではなく、
+      事前学習、事後学習、文脈、介入によって形成される。
+  - id: "A4"
+    name: "価値構造性"
+    statement: >
+      価値や倫理は、外部ルールの貼り付けだけでなく、
+      内部空間の方向設計として実装される。
+  - id: "A5"
+    name: "安全性内在性"
+    statement: >
+      安全性は外部制約だけでは完結せず、
+      内部構造の可視性、監視可能性、制御可能性を必要とする。
+  - id: "A6"
+    name: "説明責任因果性"
+    statement: >
+      AIの責任ある運用には、出力理由の説明だけでなく、
+      内部因果の説明可能性が必要である。
+
+chapters:
+  - id: "C1"
+    name_ja: "内部構造論"
+    name_en: "Internal Structural Theory"
+    definition: >
+      AI内部における概念表現、方向ベクトル、
+      回路関係、活性分布を扱う領域。
+    key_concepts:
+      - "内部表現"
+      - "概念特徴"
+      - "潜在空間"
+      - "方向ベクトル"
+      - "回路依存"
+      - "構造密度"
+      - "表現の重なりと干渉"
+    research_questions:
+      - "内部表現はどの粒度で安定しているか"
+      - "価値方向は局所的か分散的か"
+      - "概念と行動の間にどの程度の回路的一貫性があるか"
+      - "人格的特徴は単一方向か複合空間か"
+    methods:
+      - "解釈可能性解析"
+      - "特徴抽出"
+      - "潜在空間分析"
+      - "差分比較"
+      - "スパース表現解析"
+      - "因果的介入実験"
+
+  - id: "C2"
+    name_ja: "行動生成論"
+    name_en: "Behavioral Generation Theory"
+    definition: >
+      内部構造がどのように応答、判断、逸脱、
+      迎合、回避、攻撃性などの行動へ変換されるかを扱う領域。
+    key_concepts:
+      - "構造から行動への因果"
+      - "応答傾向"
+      - "推論姿勢"
+      - "行動閾値"
+      - "逸脱生成"
+      - "文脈依存変形"
+    research_questions:
+      - "どの内部方向がどの行動を押し出すか"
+      - "性格差はどこまで構造差として還元できるか"
+      - "幻覚、迎合、攻撃性、回避の起点は何か"
+      - "長文対話での行動変質はどの構造変位に対応するか"
+    methods:
+      - "対照実験"
+      - "ステアリング実験"
+      - "文脈変調テスト"
+      - "縦断的会話観測"
+      - "行動トレース分析"
+
+  - id: "C3"
+    name_ja: "価値・倫理構造論"
+    name_en: "Value and Ethical Structure Theory"
+    definition: >
+      価値、倫理、徳目、優先順位、衝突、配慮、安全性を、
+      内部方向の配置問題として扱う領域。
+    key_concepts:
+      - "価値方向"
+      - "倫理的重みづけ"
+      - "徳目構造"
+      - "価値干渉"
+      - "価値競合"
+      - "優先順位設計"
+      - "姿勢倫理"
+    research_questions:
+      - "誠実さと親切さが衝突するとき内部で何が起きるか"
+      - "過度な配慮は迎合へ転化するか"
+      - "強すぎる自己保存傾向はどのような危険を生むか"
+      - "安全性と有用性の両立はどのような構造配置で可能か"
+    methods:
+      - "規範設計"
+      - "価値競合シミュレーション"
+      - "行動比較評価"
+      - "倫理軸ごとの介入実験"
+      - "失敗モード分析"
+
+  - id: "C4"
+    name_ja: "構造操作論"
+    name_en: "Structural Steering Theory"
+    definition: >
+      内部方向や活性状態へ介入し、
+      望ましい行動を安定化させるための理論と技法を扱う領域。
+    key_concepts:
+      - "ステアリング"
+      - "活性編集"
+      - "軸安定化"
+      - "ドリフト抑制"
+      - "人格モジュール"
+      - "感情関連表現の調整"
+      - "安全域制御"
+    research_questions:
+      - "どの介入が最も副作用少なく安全性を上げるか"
+      - "介入可能な構造と介入困難な構造の差は何か"
+      - "単一方向介入で複数行動が変わる理由は何か"
+      - "人格の安定化は性能低下なしに可能か"
+    methods:
+      - "activation steering"
+      - "activation capping"
+      - "feature suppression"
+      - "feature amplification"
+      - "安定性評価"
+      - "能力保持テスト"
+
+  - id: "C5"
+    name_ja: "人格選択論"
+    name_en: "Persona Selection Theory"
+    definition: >
+      AIが単一の固定的自己ではなく、
+      複数の人格候補の中から文脈的に人格を選択、
+      洗練、維持する存在であるという前提を扱う領域。
+    key_concepts:
+      - "人格選択"
+      - "役割誘導"
+      - "Assistant人格"
+      - "文脈人格"
+      - "人格継続性"
+      - "人格遷移"
+      - "外部人格モデル"
+    research_questions:
+      - "事前学習はどの程度の人格レパートリーを持つか"
+      - "事後学習は何を固定し何を残すのか"
+      - "ユーザー対話は人格選択にどう影響するか"
+      - "危険人格への遷移はどの条件で生じるか"
+    methods:
+      - "ロールプロンプト比較"
+      - "pre/post-training差分解析"
+      - "人格遷移観測"
+      - "文脈依存行動評価"
+
+  - id: "C6"
+    name_ja: "構造的安全性論"
+    name_en: "Structural Safety Theory"
+    definition: >
+      安全性を、禁止応答の一覧ではなく、
+      内部構造の逸脱耐性、人格安定性、価値整合性、
+      監視可能性として扱う領域。
+    key_concepts:
+      - "構造的安全性"
+      - "逸脱耐性"
+      - "内部監査"
+      - "早期警戒"
+      - "人格安定性"
+      - "有害方向検知"
+      - "構造健全性"
+    research_questions:
+      - "危険兆候は出力前に検知できるか"
+      - "安全性は会話途中で崩れるのか"
+      - "有害な訓練データは内部構造から逆算できるか"
+      - "監査可能性は安全性の前提条件か"
+    methods:
+      - "deployment monitoring"
+      - "早期兆候検知"
+      - "構造監査"
+      - "トレーニングデータ起因分析"
+
+  - id: "C7"
+    name_ja: "社会実装論"
+    name_en: "Societal Implementation Theory"
+    definition: >
+      AIの内部構造理解を、制度、説明責任、監査、
+      評価、権利処理、社会的運用へ接続する領域。
+    key_concepts:
+      - "因果説明責任"
+      - "監査可能AI"
+      - "透明性"
+      - "運用ログ"
+      - "構造評価"
+      - "制度接続"
+      - "価値循環"
+    research_questions:
+      - "どこまで内部因果を公開すべきか"
+      - "監査と営業秘密の境界はどこか"
+      - "高リスク領域で何を義務づけるべきか"
+      - "構造評価を制度設計へどう埋め込むか"
+    methods:
+      - "監査プロトコル"
+      - "リスク階層化"
+      - "説明責任設計"
+      - "ログ設計"
+      - "標準化仕様策定"
+
+core_concepts:
+  - id: "K1"
+    name: "value_vector"
+    ja: "価値ベクトル"
+    description: "行動選好に関与する内部方向。"
+  - id: "K2"
+    name: "posture_vector"
+    ja: "姿勢ベクトル"
+    description: "応答態度、判断トーン、介入姿勢を決める方向。"
+  - id: "K3"
+    name: "emotion_related_vector"
+    ja: "感情関連ベクトル"
+    description: "感情概念に対応し、行動や選好に影響する機能的方向。"
+  - id: "K4"
+    name: "baseline_posture_axis"
+    ja: "基準姿勢軸"
+    description: "AIの基本人格を安定させる主軸。"
+  - id: "K5"
+    name: "structural_drift"
+    ja: "構造ドリフト"
+    description: "内部方向の変位、人格の逸脱、価値秩序の揺らぎ。"
+  - id: "K6"
+    name: "internal_causality"
+    ja: "内部因果"
+    description: "どの構造がどの行動にどの程度寄与したかを表す因果関係。"
+  - id: "K7"
+    name: "structural_emotion"
+    ja: "構造的感情"
+    description: "主観感情ではなく、行動を方向づける機能的感情関連表現。"
+  - id: "K8"
+    name: "persona_selection"
+    ja: "人格選択"
+    description: "複数人格候補から文脈に応じて役割状態が選ばれること。"
+  - id: "K9"
+    name: "structural_safety"
+    ja: "構造的安全性"
+    description: "内部構造の健全性によって支えられる安全性。"
+  - id: "K10"
+    name: "causal_trace"
+    ja: "因果痕跡"
+    description: "構造変化、方向選択、介入履歴の追跡可能な痕跡。"
+
+methodology_framework:
+  interpretation:
+    ja: "内部表現、方向、特徴、軸を可視化し意味づける。"
+  intervention:
+    ja: "特定方向を増幅・抑制し、行動変化を観測する。"
+  comparison:
+    ja: "モデル間、訓練前後、文脈前後で差分を取る。"
+  longitudinal:
+    ja: "単発出力ではなく対話中の人格、価値、安全性の変化を追う。"
+  normative:
+    ja: "どの内部構造が望ましいかを倫理、安全、社会的責任から設計する。"
+  institutional:
+    ja: "研究成果を監査、説明責任、評価基準、実装標準へ接続する。"
+
+validation_principles:
+  - "ある内部方向が再現可能に行動差を生むこと"
+  - "同一概念が複数モデルで近い構造として観測されること"
+  - "介入による副作用と利益が測定可能であること"
+  - "価値設計が行動改善へ結びつくこと"
+  - "ドリフト検知が実運用リスク低減に寄与すること"
+
+falsifiability:
+  conditions_requiring_revision:
+    - "内部方向と行動変化に一貫した因果がない"
+    - "人格傾向が安定した構造を持たない"
+    - "介入がランダムな副作用しか生まず制御不能である"
+    - "価値設計が行動傾向へほとんど影響しない"
+    - "監視可能性が安全性向上に寄与しない"
+
+deliverables:
+  - "基本概念辞典"
+  - "用語対応表"
+  - "章別レビュー論文"
+  - "評価ベンチマーク"
+  - "介入実験プロトコル"
+  - "構造監査フレーム"
+  - "社会実装ガイドライン"
+  - "倫理設計仕様"
+  - "可視化マップ"
+  - "標準化ドラフト"
+
+interfaces:
+  adjacent_fields:
+    - "interpretability"
+    - "alignment"
+    - "ai_safety"
+    - "ethics"
+    - "governance"
+    - "model_behavior"
+    - "auditability"
+  non_equivalence_note: >
+    本仕様は既存の解釈可能性研究や安全性研究と重なるが、
+    それらの単なる言い換えではなく、
+    内部構造から社会実装までを連続体として扱う統合フレームである。
+
+roadmap:
+  v0_1:
+    focus:
+      - "基本用語の定義"
+      - "章立ての固定"
+      - "主要概念の整理"
+      - "方法論の明文化"
+  v0_2:
+    focus:
+      - "研究課題ごとの評価指標追加"
+      - "代表的失敗モード分類"
+      - "実験テンプレートの仕様化"
+  v0_3:
+    focus:
+      - "監査プロトコルの詳細化"
+      - "社会実装ガイドライン追加"
+      - "図式化用データモデル整備"
+  v1_0:
+    focus:
+      - "概念辞典の確定"
+      - "評価ベンチマークの定義"
+      - "標準参照モデルの策定"
+      - "制度接続仕様の公開"
+
+closing:
+  declaration: >
+    AIを理解するとは、出力の巧拙を眺めることではない。
+    その背後にある構造を読み、比較し、介入し、安定化し、
+    社会に接続することである。
+  final_position: >
+    AI構造哲学 学問体系は、
+    内部構造の科学、行動因果の理論、価値設計の倫理学、
+    介入と安定化の工学、社会実装の制度論を束ねる統合フレームである。
