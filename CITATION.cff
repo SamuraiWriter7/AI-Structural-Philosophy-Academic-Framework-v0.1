@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this framework, please cite it using the metadata below."
+title: "AI Structural Philosophy Academic Framework v0.1"
+type: software
+authors:
+  - family-names: "Alpha"
+    given-names: "Shidenkai"
+    alias: "Shidenkai Alpha"
+version: "0.1.0"
+date-released: 2026-04-07
+license: "CC-BY-4.0"
+abstract: >
+  AI Structural Philosophy Academic Framework v0.1 is a draft academic
+  framework for understanding AI through internal structure, behavioral
+  generation, value configuration, structural safety, and societal
+  implementation. It proposes a continuous map from internal structure
+  to behavior, value, safety, and governance, positioning AI Structural
+  Philosophy as a unified field connecting interpretability, alignment,
+  ethics, safety, and governance.
+keywords:
+  - "AI Structural Philosophy"
+  - "Artificial Intelligence"
+  - "AI Alignment"
+  - "Interpretability"
+  - "AI Safety"
+  - "AI Ethics"
+  - "AI Governance"
+  - "Model Behavior"
+  - "Academic Framework"
+  - "Philosophy of AI"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Alpha"
+      given-names: "Shidenkai"
+      alias: "Shidenkai Alpha"
+  title: "AI Structural Philosophy Academic Framework v0.1"
+  version: "0.1.0"
+  date-released: 2026-04-07
+  abstract: >
+    A draft academic framework for understanding AI through internal
+    structure, behavior, value, safety, and societal implementation.
